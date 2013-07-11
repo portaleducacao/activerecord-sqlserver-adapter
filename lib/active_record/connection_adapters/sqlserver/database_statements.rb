@@ -163,7 +163,7 @@ module ActiveRecord
                     FROM [sys].[dm_exec_sessions] 
                     WHERE [session_id] = @@SPID|.squish
             select_value sql, 'SCHEMA'
-      	  elsif (user_options['isolation_level'] == 'read committed snapshot']) and sqlserver_2008?
+      	  elsif (user_options['isolation_level'] == 'read committed snapshot') and sqlserver_2008?
       	    "SNAPSHOT"
           else
             user_options['isolation_level']
